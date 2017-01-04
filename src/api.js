@@ -1,3 +1,3 @@
-exports.shortened_url = () => {
+exports.api = () => {
   console.log("I'm the url shortener.");
 }
