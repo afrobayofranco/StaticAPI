@@ -34,15 +34,15 @@ If you already have installed Nodemon use:
 nodemon scr/server.js
 ~~~~
 
-#### From Postman
-Choose **POST** and in the URL line put
+#### Using the POST method
+From Postman choose **POST** and in the URL line put:
 ~~~~
 http://localhost:3000/api/v1/url  
 ~~~~
 In the body select the **x-www-form-urlencoded** option and then for the **Key** use **URL**. The **Value** will be the URL to be shortened.
 
-#### From your Browser
-On the Address line put:
+#### Using the GET method
+From your browser in the address line put:
 ~~~~
 http://localhost:3000/api/v1/YOUR_URL
 ~~~~
