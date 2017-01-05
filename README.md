@@ -39,8 +39,18 @@ From Postman choose **POST** and in the URL line put:
 ~~~~
 http://localhost:3000/api/v1/url  
 ~~~~
-In the body select the **x-www-form-urlencoded** option and then for the **Key** use **URL**. The **Value** will be the URL to be shortened.
+There are two options here, select the **x-www-form-urlencoded** option on the body and then for the **Key** use **URL**. The **Value** will be the URL to be shortened. A **customUrl** can be added as an additional Key and it will return a custom shortened url.
 
+If a raw json file is preferred, choose the **Raw** option on the body and pass a json in the following form:
+~~~~
+{
+  "url": "YOUR_URL",
+  "customUrl": "YOUR_CUSTOM_URL"
+}
+~~~~
+
+Once again, customUrl is optional.
+ 
 #### Using the GET method
 From your browser in the address line put:
 ~~~~
