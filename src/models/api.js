@@ -6,7 +6,6 @@ exports.create = (payload, success, err) => {
     .create(payload)
     .then(success)
     .catch(err);
-  );
 };
 
 // Get All

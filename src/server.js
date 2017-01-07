@@ -1,21 +1,19 @@
 //constances required for the API to function
 const express = require('express')
 const body_parser = require('body-parser')
-const api = require('./routes/api.js')
+const apiroute = require('./routes/api.js')
+const apimodel = require('./models/api.js')
 const app = express()
-
 /*
 GET option, obtains the url to be shortened through the address line.
 Endpoint is /api/v1/:url
 */
-app.get('/api/v1/:url', (req, res) => {
-
-  //Stores the URL Input
-  var oldUrl = req.params.url; //Stores the URL Input
-
-  //response in json file. The argument is the URL Input.
-  res.json(api.url_shortener(oldUrl));
-  //console.log(api.url_shortener(oldUrl));
+app.get('/api/v1/urls', (req, res) => {
+  apimodel.getAll((err) => {
+    res.status(500).json(err);
+  }, (data) => {
+    res.status(200).json(data);
+  });
 });
 
 
