@@ -9,6 +9,7 @@ module.exports = (express) => {
 
     // Routes
     router.use('/api/', require('./api/api')(express));
+    router.use('/go/', require('./go/go')(express));
 
     return router;
 }

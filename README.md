@@ -53,7 +53,7 @@ If a raw json file is preferred, choose the **Raw** option on the body and pass 
 ~~~~
 
 Once again, customUrl is optional.
- 
+
 #### Using the GET method
 From your browser in the address line put:
 ~~~~
