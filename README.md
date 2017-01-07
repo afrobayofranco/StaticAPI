@@ -1,4 +1,7 @@
 # **An.dy URL Shortener**
+
+[![GitHub issues](https://img.shields.io/github/release/afrobayofranco/StaticAPI.svg)](https://github.com/afrobayofranco/StaticAPI/releases)
+
 Create a basic RESTful API in Node for a simplified URL shortener application
 
 ## Features
