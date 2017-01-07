@@ -1,3 +1,5 @@
+//Requires models/api.js as it holds the connection to the database and passes
+//the HTML methods according to the request.
 const apimodel = require('../../models/api.js');
 
 module.exports = (express) => {
@@ -5,7 +7,7 @@ module.exports = (express) => {
 
     /*
     POST, obtains the url to be shortened through the body
-    Endpoint is /api/v1/url
+    Endpoint is /api/v1/urls
     */
     router.post('/v1/urls', (req, res) => {
         const functions = require("../../library/functions")
@@ -17,16 +19,16 @@ module.exports = (express) => {
         var payload = functions.url_shortener(oldUrl, customUrl);
 
         apimodel.create(payload, (data) => {
+            // Store
             var response = {
                 'id': data.id,
                 'original_url': data.original_url,
                 'shortened_url': data.shortened_url
             }
-
             res.status(200).json(response);
         }, (err) => {
             // Stores shortened Url that cannot be used because it is repeated.
-            // Get it from err message from mysql.
+            // Gets it from err message from mysql.
             var customUrl = err.errors[0].value
             res.status(500).json({
                 'message': "URL: '" + err.errors[0].value + "' is already taken."
@@ -36,7 +38,7 @@ module.exports = (express) => {
 
     /*
     GET ALL, obtains the url to be shortened through the address line.
-    Endpoint is /api/v1/:url
+    Endpoint is /api/v1/urls
     */
     router.get('/v1/urls', (req, res) => {
         apimodel.getAll((data) => {
@@ -105,15 +107,15 @@ module.exports = (express) => {
     */
     router.delete('/v1/urls/:id', (req, res) => {
         apimodel.deletebyId(req.params, (data) => {
-          if (data) {
-              var response = {
-                  'message': "Item has been deleted."
-              };
-          } else {
-              var response = {
-                  'message': "That ID is not registered in our database.",
-              }
-          }
+            if (data) {
+                var response = {
+                    'message': "Item has been deleted."
+                };
+            } else {
+                var response = {
+                    'message': "That ID is not registered in our database.",
+                }
+            }
             res.status(200).json(response);
         }, (err) => {
             res.status(500).json(err);
