@@ -1,7 +1,7 @@
 //constances required for the API to function
 const express = require('express')
 const body_parser = require('body-parser')
-const api = require('./api.js')
+const api = require('./routes/api.js')
 const app = express()
 
 /*

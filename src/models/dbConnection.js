@@ -20,3 +20,18 @@ sequelize
   .catch(function (err) {
     console.log('Unable to connect to the database:', err);
   });
+
+//Sequelize creates table
+  var Url_shortener = sequelize.define('url_shortener', {
+    originalUrl: {
+      type: Sequelize.STRING
+    },
+    shortenedUrl: {
+      type: Sequelize.STRING
+    }
+  });
+
+sequelize.sync();
+
+exports.sequelize = sequelize;
+exports.Url_shortener = Url_shortener;
