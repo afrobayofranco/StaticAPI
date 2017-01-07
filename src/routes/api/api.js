@@ -4,7 +4,7 @@ module.exports = (express) => {
     const router = express.Router();
 
 /*
-POST option, obtains the url to be shortened through the body
+POST, obtains the url to be shortened through the body
 Endpoint is /api/v1/url
 */
   router.post('/v1/urls', (req, res) => {
@@ -24,13 +24,15 @@ Endpoint is /api/v1/url
 
       res.status(200).json(response);
     }, (err) => {
+      // Stores shortened Url that cannot be used because it is repeated.
+      // Get it from err message from mysql.
       var customUrl = err.errors[0].value
-      res.status(500).json("URL: '" + err.errors[0].value + "' is already taken.");
+      res.status(500).json({'message': "URL: '" + err.errors[0].value + "' is already taken."});
     });
   });
 
 /*
-GET option, obtains the url to be shortened through the address line.
+GET ALL, obtains the url to be shortened through the address line.
 Endpoint is /api/v1/:url
 */
   router.get('/v1/urls', (req, res) => {
@@ -40,5 +42,56 @@ Endpoint is /api/v1/:url
       res.status(500).json(err);
     });
   });
+
+/*
+GET by ID, obtains the url to be shortened through the address line.
+Endpoint is /api/v1/:url
+*/
+  router.get('/v1/urls/:id', (req, res) => {
+    apimodel.getbyId(req.params, (data) => {
+      if (data == null){
+      var response = {'message': "That ID is not registered in our database."};
+    } else {
+      var response = {'id': data.id,
+                      'original_url': data.original_url,
+                      'shortened_url': data.shortened_url
+                      }
+      }
+      res.status(200).json(response);
+    }, (err) => {
+      res.status(500).json(err);
+    });
+  });
+
+/*
+UPDATE, obtains the url to be shortened through the body
+Endpoint is /api/v1/url
+*/
+    router.post('/v1/urls/:id', (req, res) => {
+      const functions = require("../../library/functions")
+      //Stores the URL Input
+      var oldUrl = req.body.url;
+      //Stores custom URL suffix
+      var customUrl = req.body.customUrl;
+
+      var payload = functions.url_shortener(oldUrl, customUrl);
+
+      payload.id = req.params.id;
+
+      apimodel.updatebyId(payload, (data) => {
+        var response = {'id': data.id,
+                        'original_url': data.original_url,
+                        'shortened_url': data.shortened_url
+                        }
+
+        res.status(200).json(response);
+      }, (err) => {
+        res.status(500).json({'message': "That ID is not registered in our database."});
+      });
+    });
+
+
+
   return router;
+
 }
