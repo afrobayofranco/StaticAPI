@@ -23,11 +23,12 @@ sequelize
 
 //Sequelize creates table
   var Url_shortener = sequelize.define('url_shortener', {
-    originalUrl: {
+    original_url: {
       type: Sequelize.STRING
     },
-    shortenedUrl: {
-      type: Sequelize.STRING
+    shortened_url: {
+      type: Sequelize.STRING,
+      unique: true
     }
   });
 

@@ -14,10 +14,20 @@ Endpoint is /api/v1/url
     //Stores custom URL suffix
     var customUrl = req.body.customUrl;
 
-    //response in json file. The argument is the URL Input.
-    res.json(functions.url_shortener(oldUrl, customUrl));
-    //console.log(req.body.url);
-  })
+    var payload = functions.url_shortener(oldUrl, customUrl);
+
+    apimodel.create(payload, (data) => {
+      var response = {'id': data.id,
+                      'original_url': data.original_url,
+                      'shortened_url': data.shortened_url
+                      }
+
+      res.status(200).json(response);
+    }, (err) => {
+      var customUrl = err.errors[0].value
+      res.status(500).json("URL: '" + err.errors[0].value + "' is already taken.");
+    });
+  });
 
 /*
 GET option, obtains the url to be shortened through the address line.
