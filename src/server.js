@@ -4,6 +4,7 @@ const body_parser = require('body-parser')
 const app = express()
 
 //Server configuration
+require('dotenv').config()
 const port = process.env.PORT || 3000;
 
 app.use(body_parser.json()); // support json encoded bodies
