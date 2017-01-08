@@ -23,6 +23,6 @@
     "sequelize": "^3.29.0"
   },
   "devDependencies": {
-    "dotenv": "^2.0.0",
+    "dotenv": "^2.0.0"
   }
 }
