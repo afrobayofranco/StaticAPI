@@ -1,8 +1,8 @@
-//Models to communicate with the database, it requires dbConnection as
-//it holds the credentials to connect to the database.
+// Models to communicate with the database, it requires dbConnection as
+// it holds the credentials to connect to the database.
 const dbConnection = require('./dbConnection.js');
 
-//CREATE,
+// CREATE,
 exports.create = (payload, success, err) => {
     dbConnection.Url_shortener
         .create(payload)
@@ -10,7 +10,7 @@ exports.create = (payload, success, err) => {
         .catch(err);
 };
 
-//GET ALL,
+// GET ALL,
 exports.getAll = (success, err) => {
     dbConnection.Url_shortener
         .findAll()
@@ -18,7 +18,7 @@ exports.getAll = (success, err) => {
         .catch(err);
 };
 
-//GET BY ID,
+// GET BY ID,
 exports.getbyId = (payload, success, err) => {
     dbConnection.Url_shortener
         .find({
@@ -30,7 +30,7 @@ exports.getbyId = (payload, success, err) => {
         .catch(err);
 };
 
-//UPDATE BY ID,
+// UPDATE BY ID,
 exports.updatebyId = (payload, success, err) => {
     dbConnection.Url_shortener
         .find({
@@ -43,7 +43,7 @@ exports.updatebyId = (payload, success, err) => {
         }).catch(err);
 };
 
-//DELETE,
+// DELETE,
 exports.deletebyId = (payload, success, err) => {
     dbConnection.Url_shortener
         .destroy({
