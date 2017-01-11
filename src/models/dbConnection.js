@@ -1,5 +1,6 @@
 //Require sequelize as it is the interpreter for the JS to MySQL lenguage
 const Sequelize = require('sequelize');
+const debugTool = require('../library/debugTool')
 
 //Stores the instance of the connection to the database, reads .env that holds the environmental variables
 var sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
@@ -17,10 +18,10 @@ var sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.
 sequelize
     .authenticate()
     .then(function(err) {
-        console.log('Connection has been established successfully.');
+        debugTool.debug('Connection has been established successfully.', 'success');
     })
     .catch(function(err) {
-        console.log('Unable to connect to the database:', err);
+        debugTool.debug('Unable to connect to the database.', 'error');
     });
 
 //Sequelize creates table
@@ -34,9 +35,9 @@ var Url_shortener = sequelize.define('url_shortener', {
     }
 });
 
-//Synchs DB content
+// Synchs DB content
 sequelize.sync();
 
-//Exports sequelize and Url_shortener
+// Exports sequelize and Url_shortener
 exports.sequelize = sequelize;
 exports.Url_shortener = Url_shortener;

@@ -1,3 +1,5 @@
+const debugTool = require('../../library/debugTool')
+
 //Requires models/api.js as it holds the connection to the database and passes
 //the HTML methods according to the request.
 const apimodel = require('../../models/api.js');
@@ -17,7 +19,6 @@ module.exports = (express) => {
         var customUrl = req.body.customUrl;
 
         var payload = functions.url_shortener(oldUrl, customUrl);
-
         apimodel.create(payload, (data) => {
             // Store
             var response = {
@@ -26,6 +27,7 @@ module.exports = (express) => {
                 'shortened_url': data.shortened_url
             }
             res.status(200).json(response);
+            debugTool.debug('POST works on /v1/urls' , 'success');
         }, (err) => {
             // Stores shortened Url that cannot be used because it is repeated.
             // Gets it from err message from mysql.
