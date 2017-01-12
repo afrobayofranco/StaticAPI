@@ -1,5 +1,5 @@
 {
-  "name": "an.dy url_shortener",
+  "name": "an.dy_url_shortener",
   "version": "1.0.0",
   "description": "Create a basic RESTful API in Node for a simplified URL shortener application",
   "main": "src/server.js",
