@@ -12,3 +12,59 @@ Thu, 12 Jan 2017 21:40:28 GMT:
    [an.dy_url_shortener] Server Active on 3000
 Thu, 12 Jan 2017 21:40:28 GMT:
    [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:02:27 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:02:27 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:03:33 GMT:
+   [an.dy_url_shortener] POST works on /v1/urls and new short Url was created
+Thu, 12 Jan 2017 23:03:55 GMT:
+   [an.dy_url_shortener] POST works on /v1/urls and new short Url was created
+Thu, 12 Jan 2017 23:03:59 GMT:
+   [an.dy_url_shortener] POST works on /v1/urls but customURL is taken
+Thu, 12 Jan 2017 23:18:02 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:18:02 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:18:22 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:18:22 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:18:33 GMT:
+   [an.dy_url_shortener] GET ALL works on /v1/urls
+Thu, 12 Jan 2017 23:20:38 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:20:38 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:20:44 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:20:44 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:21:05 GMT:
+   [an.dy_url_shortener] GET by ID working on /v1/urls/:id
+Thu, 12 Jan 2017 23:21:20 GMT:
+   [an.dy_url_shortener] GET by ID working on /v1/urls/:id
+Thu, 12 Jan 2017 23:22:01 GMT:
+   [an.dy_url_shortener] GET by ID working on /v1/urls/:id
+Thu, 12 Jan 2017 23:32:04 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:32:04 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:32:08 GMT:
+   [an.dy_url_shortener] UPDATE working on /v1/urls/:id
+Thu, 12 Jan 2017 23:33:53 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:33:53 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:34:25 GMT:
+   [an.dy_url_shortener] DELETE working on /v1/urls/:id
+Thu, 12 Jan 2017 23:34:50 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:34:50 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
+Thu, 12 Jan 2017 23:34:54 GMT:
+   [an.dy_url_shortener] DELETE working on /v1/urls/:id
+Thu, 12 Jan 2017 23:35:47 GMT:
+   [an.dy_url_shortener] Server Active on 3000
+Thu, 12 Jan 2017 23:35:47 GMT:
+   [an.dy_url_shortener] Connection has been established successfully.
