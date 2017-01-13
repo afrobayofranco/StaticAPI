@@ -27,7 +27,7 @@ module.exports = (express) => {
         'shortened_url': data.shortened_url
       }
       res.status(200).json(response);
-      debugTool.debug('POST works on /v1/urls and new short Url was created', 'success');
+      debugTool.debug('POST works on /v1/urls and new short Url was created', 'seccess');
     }, (err) => {
       // Stores shortened Url that cannot be used because it is repeated.
       // Gets it from err message from mysql.

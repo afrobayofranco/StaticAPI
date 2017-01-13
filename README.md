@@ -190,3 +190,36 @@ In json format as follows if item does not exists, or has been deleted already.
   "message": "That ID is not registered in our database."
 }
 ~~~~
+
+
+---
+
+## DEBUG Features
+A debug feature was added to facilitate determining errors on endpoints, models, and data connections.
+
+Debug mode can be activated by command line while starting the server and setting the environmental variable:
+~~~~
+DEBUB=true
+~~~~
+
+
+### Use
+With any of the HTTP methods a debug message will appear in the following form:
+~~~~
+Fri, 13 Jan 2017 01:38:24 GMT:
+   [an.dy_url_shortener] GET ALL Model working
+Fri, 13 Jan 2017 01:38:24 GMT:
+   [an.dy_url_shortener] GET ALL working on /v1/urls
+ ~~~~
+
+### Setting your own debug messages
+Put the following line were you want to get a debug message:
+~~~~
+debugTool.debug('YOUR_MESSAGE', '{type}');
+~~~~
+
+ #### Error Types
+
+ ***success*** will turn debug message to green color.
+ ***error*** will turn debug message to red color.
+ You can live the argument empty and debug message will be yellow color.
