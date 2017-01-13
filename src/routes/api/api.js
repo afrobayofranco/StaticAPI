@@ -1,4 +1,4 @@
-const debugTool = require('../../library/debugTool')
+const debugTool = require('../../library/debugTool');
 
 //Requires models/api.js as it holds the connection to the database and passes
 //the HTML methods according to the request.
@@ -35,7 +35,7 @@ module.exports = (express) => {
       res.status(500).json({
         'message': "URL: '" + err.errors[0].value + "' is already taken."
       });
-      debugTool.debug('POST works on /v1/urls but customURL is taken' , 'success');
+      debugTool.debug('POST works on /v1/urls but customURL is taken', 'success');
     });
   });
 
@@ -46,10 +46,10 @@ module.exports = (express) => {
   router.get('/v1/urls', (req, res) => {
     apimodel.getAll((data) => {
       res.status(200).json(data);
-      debugTool.debug('GET ALL working on /v1/urls' , 'success');
+      debugTool.debug('GET ALL working on /v1/urls', 'success');
     }, (err) => {
       res.status(500).json(err);
-      debugTool.debug('GET ALL not working on /v1/urls' , 'error');
+      debugTool.debug('GET ALL not working on /v1/urls', 'error');
     });
   });
 
@@ -71,10 +71,10 @@ module.exports = (express) => {
         }
       }
       res.status(200).json(response);
-      debugTool.debug('GET by ID working on /v1/urls/:id' , 'success');
+      debugTool.debug('GET by ID working on /v1/urls/:id', 'success');
     }, (err) => {
       res.status(500).json(err);
-      debugTool.debug('GET by ID not working on /v1/urls/:id' , 'error');
+      debugTool.debug('GET by ID not working on /v1/urls/:id', 'error');
     });
   });
 
@@ -101,12 +101,12 @@ module.exports = (express) => {
       }
 
       res.status(200).json(response);
-      debugTool.debug('UPDATE working on /v1/urls/:id' , 'success');
+      debugTool.debug('UPDATE working on /v1/urls/:id', 'success');
     }, (err) => {
       res.status(500).json({
         'message': "That ID is not registered in our database."
       });
-      debugTool.debug('UPDATE not working on /v1/urls/:id' , 'error');
+      debugTool.debug('UPDATE working on /v1/urls/:id but Id is not in database.', 'success');
     });
   });
 
@@ -126,10 +126,10 @@ module.exports = (express) => {
         }
       }
       res.status(200).json(response);
-      debugTool.debug('DELETE working on /v1/urls/:id' , 'success');
+      debugTool.debug('DELETE working on /v1/urls/:id', 'success');
     }, (err) => {
       res.status(500).json(err);
-      debugTool.debug('DELETE working on /v1/urls/:id' , 'error');
+      debugTool.debug('DELETE working on /v1/urls/:id', 'error');
     });
   });
   return router;

@@ -13,14 +13,14 @@ const port = process.env.PORT || 3000;
 // Support json encoded bodies
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({
-    extended: true
+  extended: true
 }));
 
 app.use('/', require('./routes')(express));
 
 // Stores server port connection and console.log the active server port
 const server = app.listen(port, () => {
-    debugTool.debug('Server Active on ' + port, 'success');
+  debugTool.debug('Server Active on ' + port, 'success');
 });
 
 // Exports the server

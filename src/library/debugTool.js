@@ -16,10 +16,10 @@ exports.debug = (message, status) => {
     // Checks for status, if == success chalk is green
     if (status === 'success') {
       color = chalk.green;
-    // Checks for status, if == error chalk is red
+      // Checks for status, if == error chalk is red
     } else if (status === 'error') {
       color = chalk.red;
-    // Any other, chalk is yellow
+      // Any other, chalk is yellow
     } else {
       color = chalk.yellow;
     }
@@ -43,7 +43,7 @@ exports.debug = (message, status) => {
     // logs get appended
     filesystem.appendFile(log, msgtext, (err) => {
       if (err) {
-        filesystem.writeFileSync(log, msgtext);
+        console.log(err);
       }
     });
   }
