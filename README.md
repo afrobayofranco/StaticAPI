@@ -14,9 +14,10 @@ To install An.dy URL Shortener clone the repository to your computer. You can do
 git clone https://github.com/afrobayofranco/StaticAPI.git
 ~~~~
 
-Once you have cloned the repository install the shortener by command line:
+Once you have cloned the repository, get into the file itself and install the shortener by command line:
 
 ~~~~
+cd StaticAPI
 npm install
 ~~~~
 
@@ -54,7 +55,7 @@ PORT=3000
 On the Terminal start the Server with:
 
 ~~~~
-node scr/server.js
+node src/server.js
 ~~~~
 
 If you already have installed Nodemon use:

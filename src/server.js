@@ -20,6 +20,7 @@ app.use('/', require('./routes')(express));
 
 // Stores server port connection and console.log the active server port
 const server = app.listen(port, () => {
+  console.log('an.dy is running on' + port);
   debugTool.debug('Server Active on ' + port, 'success');
 });
 
