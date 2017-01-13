@@ -200,7 +200,7 @@ A debug feature was added to facilitate determining errors on endpoints, models,
 
 Debug mode can be activated by command line while starting the server and setting the environmental variable:
 ~~~~
-DEBUB=true
+DEBUG=true
 ~~~~
 
 
@@ -219,8 +219,8 @@ Put the following line were you want to get a debug message:
 debugTool.debug('YOUR_MESSAGE', '{type}');
 ~~~~
 
- #### Error Types
+#### Error Types
 
- ***success*** will turn debug message to green color.
- ***error*** will turn debug message to red color.
- You can live the argument empty and debug message will be yellow color.
+***success*** will turn debug message to green color.
+***error*** will turn debug message to red color.
+You can live the argument empty and debug message will be yellow color.
