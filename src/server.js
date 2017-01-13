@@ -1,6 +1,7 @@
 //constances required for the API to function
 const express = require('express')
 const body_parser = require('body-parser')
+const debugTool = require('./library/debugTool')
 const app = express()
 
 //Server configuration
@@ -12,14 +13,15 @@ const port = process.env.PORT || 3000;
 // Support json encoded bodies
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({
-    extended: true
+  extended: true
 }));
 
 app.use('/', require('./routes')(express));
 
 // Stores server port connection and console.log the active server port
 const server = app.listen(port, () => {
-    console.log('Server Active on', port);
+  console.log('an.dy is running on' + port);
+  debugTool.debug('Server Active on ' + port, 'success');
 });
 
 // Exports the server

@@ -14,9 +14,10 @@ To install An.dy URL Shortener clone the repository to your computer. You can do
 git clone https://github.com/afrobayofranco/StaticAPI.git
 ~~~~
 
-Once you have cloned the repository install the shortener by command line:
+Once you have cloned the repository, get into the file itself and install the shortener by command line:
 
 ~~~~
+cd StaticAPI
 npm install
 ~~~~
 
@@ -54,7 +55,7 @@ PORT=3000
 On the Terminal start the Server with:
 
 ~~~~
-node scr/server.js
+node src/server.js
 ~~~~
 
 If you already have installed Nodemon use:
@@ -190,3 +191,36 @@ In json format as follows if item does not exists, or has been deleted already.
   "message": "That ID is not registered in our database."
 }
 ~~~~
+
+
+---
+
+## DEBUG Features
+A debug feature was added to facilitate determining errors on endpoints, models, and data connections.
+
+Debug mode can be activated by command line while starting the server and setting the environmental variable:
+~~~~
+DEBUB=true
+~~~~
+
+
+### Use
+With any of the HTTP methods a debug message will appear in the following form:
+~~~~
+Fri, 13 Jan 2017 01:38:24 GMT:
+   [an.dy_url_shortener] GET ALL Model working
+Fri, 13 Jan 2017 01:38:24 GMT:
+   [an.dy_url_shortener] GET ALL working on /v1/urls
+ ~~~~
+
+### Setting your own debug messages
+Put the following line were you want to get a debug message:
+~~~~
+debugTool.debug('YOUR_MESSAGE', '{type}');
+~~~~
+
+ #### Error Types
+
+ ***success*** will turn debug message to green color.
+ ***error*** will turn debug message to red color.
+ You can live the argument empty and debug message will be yellow color.
