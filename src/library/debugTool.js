@@ -7,8 +7,11 @@ const filesystem = require('fs');
 // and brings in the message and status
 exports.debug = (message, status) => {
   // Create a new date for the timestamp
-  var dt = new Date();
-  var utcDate = dt.toUTCString();
+  const dt = new Date();
+  const utcDate = dt.toUTCString();
+  // Stores the file dir and the .log names
+  const dir = './src/logs';
+  const log = dir + '/andy.log';
   // Stores color to be available later on
   let color;
   // DEBUG Switch if true it activates debbuging
@@ -25,14 +28,11 @@ exports.debug = (message, status) => {
     }
 
     // Stores messages, one for console.log and other for the file .log
-    var msgcons = utcDate + ':\n   ' + chalk.black.bgGreen('[' + packjson.name + ']') + ' ' + color(message);
-    var msgtext = utcDate + ':\n   [' + packjson.name + '] ' + message + '\n';
+    const msgcons = utcDate + ':\n   ' + chalk.black.bgGreen('[' + packjson.name + ']') + ' ' + color(message);
+    const msgtext = utcDate + ':\n   [' + packjson.name + '] ' + message + '\n';
 
+    // Console log the message with chalk included
     console.log(msgcons);
-
-    // Stores the file dir and the .log names
-    var dir = './src/logs';
-    var log = dir + '/andy.log';
 
     // Check for the logs dir, if does not exists, it is created it.
     if (!filesystem.existsSync(dir)) {
