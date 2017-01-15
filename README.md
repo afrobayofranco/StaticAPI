@@ -4,11 +4,11 @@
 
 Create a basic RESTful API in Node for a simplified URL shortener application
 
-[Features](#features)
-[Installation](#installation)
-[Run the API](#running)
-[Debugging](#debugging)
-[Coding Style](#codingstyle)
+[Features](#features)  
+[Installation](#installation)  
+[Run the API](#running)  
+[Debugging](#debugging)  
+[Coding Style](#codingstyle)  
 
 ## Features<a name="features">
 An.dy URL Shortener allows its users to shorten a URL to a very simple and useful shortened url. Once the shortURL is saved, users can use it to redirect to the original URL.
@@ -228,7 +228,7 @@ debugTool.debug('YOUR_MESSAGE', '{type}');
 
 ***success*** will turn debug message to green color.
 ***error*** will turn debug message to red color.
-You can live the argument empty and debug message will be yellow color.
+You can leave the argument empty and debug message will be yellow color.
 
 ---
 

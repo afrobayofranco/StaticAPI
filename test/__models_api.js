@@ -2,6 +2,7 @@ require('dotenv').config();
 const expect = require('chai').expect;
 const functions = require('../src/library/functions');
 const api = require('../src/models/api');
+//const go = require('../src/models/go');
 const debugTool = require('../src/library/debugTool');
 
 describe('Models_API', () => {
@@ -48,6 +49,15 @@ describe('Models_API', () => {
       done();
     }, () => {
       debugTool.debug('Fail to update url in db', 'error');
+    });
+  });
+
+  it('Should GET original URL by shortened_url', (done) => {
+    api.getbyshortURL(testUrls.shortened_url, (data) => {
+      expect(testUrls.original_url).to.be.equal(data.dataValues.original_url);
+      done();
+    }, () => {
+      debugTool.debug('Fail to get origianl url by shortenes url', 'error');
     });
   });
 

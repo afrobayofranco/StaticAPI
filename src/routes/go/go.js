@@ -1,4 +1,4 @@
-const apimodel = require('../../models/go.js');
+const apimodel = require('../../models/api.js');
 const debugTool = require('../../library/debugTool');
 
 module.exports = (express) => {

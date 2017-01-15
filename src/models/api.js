@@ -48,6 +48,19 @@ exports.updatebyId = (payload, success, err) => {
   debugTool.debug('UPDATE by ID Model working', 'success');
 };
 
+// GO TO URL, search into database for short URL and returns original_url
+exports.getbyshortURL = (shortURL, success, err) => {
+  dbConnection.Url_shortener
+    .find({
+      where: {
+        shortened_url: shortURL,
+      },
+    })
+    .then(success)
+    .catch(err);
+  debugTool.debug('GO Model working', 'success');
+};
+
 // DELETE,
 exports.deletebyId = (payload, success, err) => {
   dbConnection.Url_shortener
