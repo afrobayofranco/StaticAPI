@@ -4,10 +4,16 @@
 
 Create a basic RESTful API in Node for a simplified URL shortener application
 
-## Features
+[Features](#features)
+[Installation](#installation)
+[Run the API](#running)
+[Debugging](#debugging)
+[Coding Style](#codingstyle)
+
+## Features<a name="features">
 An.dy URL Shortener allows its users to shorten a URL to a very simple and useful shortened url. Once the shortURL is saved, users can use it to redirect to the original URL.
 
-## Installation
+## Installation<a name="installation">
 To install An.dy URL Shortener clone the repository to your computer. You can do that either by clicking on the "clone or download" green button on the top right of An.dy repository, or by command line on you terminal using:
 
 ~~~~
@@ -50,7 +56,7 @@ DB_PASS={Your_password}
 PORT=3000
 ~~~
 
-## Run the API
+## Run the API<a name="Running">
 ### Start you server
 On the Terminal start the Server with:
 
@@ -192,10 +198,9 @@ In json format as follows if item does not exists, or has been deleted already.
 }
 ~~~~
 
-
 ---
 
-## DEBUG Features
+## DEBUG Features<a name="debugging">
 A debug feature was added to facilitate determining errors on endpoints, models, and data connections.
 
 Debug mode can be activated by command line while starting the server and setting the environmental variable:
@@ -224,3 +229,8 @@ debugTool.debug('YOUR_MESSAGE', '{type}');
 ***success*** will turn debug message to green color.
 ***error*** will turn debug message to red color.
 You can live the argument empty and debug message will be yellow color.
+
+---
+
+## Coding Style<a name="codingstyle">
+The coding style for this API follows the [airbnb](https://github.com/airbnb/javascript) style guide. Linter was used to process the code and ensure its complies with the style guide.
