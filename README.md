@@ -275,7 +275,25 @@ DEBUG=true npm test
 
 A complete successful test should look like this:
 
+~~~~
+Models_API
+    ✓ Should CREATE record in db
+    ✓ Should GET ALL from db
+    ✓ Should GET by ID from db
+    ✓ Should UPDATE record by ID in db
+    ✓ Should GET original URL by shortened_url (GO)
+    ✓ Should DELETE record by ID in db
 
+  Routes
+an.dy is running on 3000
+    ✓ API Status: /status
+    ✓ Create a new record: /api/v1/urls
+    ✓ Get all records: /api/v1/urls
+    ✓ Get record by Id: /api/v1/urls/:id
+    ✓ Update record by Id: /api/v1/urls/:id
+    ✓ Delete record by Id: /api/v1/urls/:id
+    ✓ Go to url by short Id: /go/:shortId
+~~~~
 ---
 
 ## Coding Style<a name="codingstyle">
