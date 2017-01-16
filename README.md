@@ -255,7 +255,7 @@ You can leave the argument empty and debug message will be yellow color.
 
 ---
 
-## TESTING<a name="testing">
+## Testing<a name="testing">
 Unit testing is provided with mocha, chai, and supertest npm modules.
 
 There are tests for every method in every model, and a dynamic test for every route.
