@@ -66,6 +66,4 @@ describe('Models_API', () => {
       debugTool.debug('Fail to delete url in db', 'error');
     });
   });
-
-
 });
