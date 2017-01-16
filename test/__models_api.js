@@ -2,7 +2,6 @@ require('dotenv').config();
 const expect = require('chai').expect;
 const functions = require('../src/library/functions');
 const api = require('../src/models/api');
-//const go = require('../src/models/go');
 const debugTool = require('../src/library/debugTool');
 
 describe('Models_API', () => {
@@ -43,16 +42,14 @@ describe('Models_API', () => {
     testUrls.original_url = newUrls.original_url;
     testUrls.shortened_url = newUrls.shortened_url;
     api.updatebyId(testUrls, (data) => {
-      expect(testUrls.id).to.be.equal(data.dataValues.id);
-      expect(testUrls.original_url).to.be.equal(data.dataValues.original_url);
-      expect(testUrls.shortened_url).to.be.equal(data.dataValues.shortened_url);
+      expect(data[0]).to.be.equal(1);
       done();
     }, () => {
       debugTool.debug('Fail to update url in db', 'error');
     });
   });
 
-  it('Should GET original URL by shortened_url', (done) => {
+  it('Should GET original URL by shortened_url (GO)', (done) => {
     api.getbyshortURL(testUrls.shortened_url, (data) => {
       expect(testUrls.original_url).to.be.equal(data.dataValues.original_url);
       done();
@@ -69,4 +66,6 @@ describe('Models_API', () => {
       debugTool.debug('Fail to delete url in db', 'error');
     });
   });
+
+
 });

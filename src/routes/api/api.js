@@ -93,20 +93,22 @@ module.exports = (express) => {
     const payload = functions.url_shortener(oldUrl, customUrl);
 
     payload.id = req.params.id;
-
+    let response;
     apimodel.updatebyId(payload, (data) => {
-      const response = {
-        id: data.id,
-        original_url: data.original_url,
-        shortened_url: data.shortened_url,
-      };
+      if (data[0] === 1) {
+        response = {
+          message: 'That record has been updated.',
+        };
+      } else {
+        response = {
+          message: 'That Id is not in our database',
+        };
+      }
       res.status(200).json(response);
       debugTool.debug('UPDATE working on /v1/urls/:id', 'success');
-    }, () => {
-      res.status(500).json({
-        message: 'That ID is not registered in our database.',
-      });
-      debugTool.debug('UPDATE working on /v1/urls/:id but Id is not in database.', 'success');
+    }, (err) => {
+      res.status(500).json(err);
+      debugTool.debug('UPDATE not working on /v1/urls/:id', 'error');
     });
   });
 

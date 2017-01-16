@@ -33,7 +33,7 @@ exports.getbyId = (payload, success, err) => {
     .catch(err);
   debugTool.debug('GET by ID Model working', 'success');
 };
-
+/*
 // UPDATE BY ID,
 exports.updatebyId = (payload, success, err) => {
   dbConnection.Url_shortener
@@ -43,8 +43,20 @@ exports.updatebyId = (payload, success, err) => {
       },
     })
     .then((existingData) => {
-      existingData.updateAttributes(payload).then(success).catch(err);
+      existingData.
+      updateAttributes(payload).then(success).catch(err);
     }).catch(err);
+  debugTool.debug('UPDATE by ID Model working', 'success');
+};
+*/
+// UPDATE BY ID,
+exports.updatebyId = (payload, success, err) => {
+  dbConnection.Url_shortener
+    .update(
+      { original_url: payload.original_url, shortened_url: payload.shortened_url },
+      { where: { id: payload.id } })
+    .then(success)
+    .catch(err);
   debugTool.debug('UPDATE by ID Model working', 'success');
 };
 
