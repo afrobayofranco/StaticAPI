@@ -1,6 +1,9 @@
+// Requires,
 const request = require('supertest');
 const debugTool = require('../src/library/debugTool');
 
+// Array with objects containing each of the endpoints information.
+// description, route and Http method
 const routes = [
   {
     descrip: 'API Status: /status',
@@ -39,19 +42,24 @@ const routes = [
   },
 ];
 
-
+// Tests, starts by calling all within ROUTES.
 describe('Routes', () => {
+  // Stores the server instance while the Test is run
   let server;
-
+  // Starts the server before each test by calling it
   beforeEach(() => {
     server = require('../src/server.js');
   });
+  // Closes the server after each test
   afterEach(() => {
     server.close();
   });
 
+  // for Each Loop to go through the array
   routes.forEach((route) => {
+    // Switch starts bringing in the route method
     switch (route.method) {
+      // First case: POST
       case 'Post':
         it(route.descrip, (done) => {
           request(server)
@@ -59,9 +67,10 @@ describe('Routes', () => {
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, done);
-          debugTool.debug('Success', 'success');
+          debugTool.debug('POST Test working on __Routes_api ' + route.route, 'success');
         });
         break;
+      // Second case: GET
       case 'Get':
         it(route.descrip, (done) => {
           request(server)
@@ -69,9 +78,10 @@ describe('Routes', () => {
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, done);
-          debugTool.debug('Success', 'success');
+          debugTool.debug('GET Test working on __Routes_api ' + route.route, 'success');
         });
         break;
+      // Third case: UPDATE
       case 'Delete':
         it(route.descrip, (done) => {
           request(server)
@@ -79,7 +89,7 @@ describe('Routes', () => {
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, done);
-          debugTool.debug('Success', 'success');
+          debugTool.debug('DELETE Test working on __Routes_api ' + route.route, 'success');
         });
         break;
       default:

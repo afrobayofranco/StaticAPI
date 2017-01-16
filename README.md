@@ -8,6 +8,7 @@ Create a basic RESTful API in Node for a simplified URL shortener application
 [Installation](#installation)  
 [Run the API](#running)  
 [Debugging](#debugging)  
+[Testing](#testing)  
 [Coding Style](#codingstyle)  
 
 ## Features<a name="features">
@@ -56,7 +57,7 @@ DB_PASS={Your_password}
 PORT=3000
 ~~~
 
-## Run the API<a name="Running">
+## Run the API<a name="running">
 ### Start you server
 On the Terminal start the Server with:
 
@@ -198,6 +199,28 @@ In json format as follows if item does not exists, or has been deleted already.
 }
 ~~~~
 
+#### GO to a shortened url
+
+To got to a shortened URL use the endpoint:
+~~~~
+/go/:shortUrl
+~~~~
+
+The **shortUrl** parameter is the path without the **an.dy/ part**.
+
+For example, if you created the short url:
+
+{
+  "id": 43,
+  "original_url": "www.github.com",
+  "shortened_url": "an.dy/gHub"
+}
+
+In order to use the /go endpoint to go to ***www.github.com*** you should use:
+~~~~
+/go/gHub
+~~~~
+
 ---
 
 ## DEBUG Features<a name="debugging">
@@ -229,6 +252,29 @@ debugTool.debug('YOUR_MESSAGE', '{type}');
 ***success*** will turn debug message to green color.
 ***error*** will turn debug message to red color.
 You can leave the argument empty and debug message will be yellow color.
+
+---
+
+## TESTING<a name="testing">
+Unit testing is provided with mocha, chai, and supertest npm modules.
+
+There are tests for every method in every model, and a dynamic test for every route.
+
+In order to run the tests use:
+~~~~
+npm test
+~~~~
+Or if you have mocha install globally (with the -g option), you could also use:
+~~~~
+mocha
+~~~~
+You can also use debug mode with the Unit Test as so:
+~~~~
+DEBUG=true npm test
+~~~~
+
+A complete successful test should look like this:
+
 
 ---
 
