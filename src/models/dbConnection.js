@@ -1,6 +1,6 @@
 // Require sequelize as it is the interpreter for the JS to MySQL lenguage
 const Sequelize = require('sequelize');
-const debugTool = require('../library/debugTool');
+const debugTool = require('andydebugtool');
 
 // Stores the instance of the connection to the database, reads .env that holds
 // the environmental variables

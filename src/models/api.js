@@ -1,7 +1,7 @@
 // Models to communicate with the database, it requires dbConnection as
 // it holds the credentials to connect to the database.
 const dbConnection = require('./dbConnection.js');
-const debugTool = require('../library/debugTool');
+const debugTool = require('andydebugtool');
 
 // CREATE,
 exports.create = (payload, success, err) => {

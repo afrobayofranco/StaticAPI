@@ -1,7 +1,7 @@
 // Constances required for the API to function
 const express = require('express');
 const bodyParser = require('body-parser');
-const debugTool = require('./library/debugTool');
+const debugTool = require('andydebugtool');
 
 const app = express();
 

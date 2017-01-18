@@ -1,4 +1,4 @@
-const debugTool = require('../../library/debugTool');
+const debugTool = require('andydebugtool');
 
 // Requires models/api.js as it holds the connection to the database and passes
 // the HTML methods according to the request.

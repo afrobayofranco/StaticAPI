@@ -1,6 +1,6 @@
 // Requires,
 const request = require('supertest');
-const debugTool = require('../src/library/debugTool');
+const debugTool = require('andydebugtool');
 
 // Array with objects containing each of the endpoints information.
 // description, route and Http method

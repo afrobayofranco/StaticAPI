@@ -3,7 +3,7 @@ require('dotenv').config();
 const expect = require('chai').expect;
 const functions = require('../src/library/functions');
 const api = require('../src/models/api');
-const debugTool = require('../src/library/debugTool');
+const debugTool = require('andydebugtool');
 
 // Tests, starts by calling the API from Models.
 describe('Models_API', () => {

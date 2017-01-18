@@ -1,5 +1,5 @@
 const apimodel = require('../../models/api.js');
-const debugTool = require('../../library/debugTool');
+const debugTool = require('andydebugtool');
 
 module.exports = (express) => {
   const router = express.Router();
