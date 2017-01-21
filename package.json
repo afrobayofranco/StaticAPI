@@ -1,7 +1,8 @@
 {
   "name": "an.dy_url_shortener",
   "version": "1.0.0",
-  "description": "Create a basic RESTful API in Node for a simplified URL shortener application",
+ "engine": {"node": "7.2.0"},
+ "description": "Create a basic RESTful API in Node for a simplified URL shortener application",
   "main": "src/server.js",
   "scripts": {
     "test": "mocha"
