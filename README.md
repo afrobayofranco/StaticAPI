@@ -1,6 +1,6 @@
-# **An.dy URL Shortener**
+![an.dy url shortener](src/routes/public/images/andy_url_shortener.png "an.dy url shortener")
 
-[![GitHub issues](https://img.shields.io/github/release/afrobayofranco/StaticAPI.svg?style=plastic)](https://github.com/afrobayofranco/StaticAPI/releases)
+# An.dy URL Shortener [![GitHub issues](https://img.shields.io/github/release/afrobayofranco/StaticAPI.svg)](https://github.com/afrobayofranco/StaticAPI/releases) [![codeship](https://codeship.com/projects/a8205c20-c25e-0134-5696-22c030d3a647/status?branch=master)](https://app.codeship.com/projects/197433)
 
 Create a basic RESTful API in Node for a simplified URL shortener application
 
