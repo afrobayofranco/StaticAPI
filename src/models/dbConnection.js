@@ -5,7 +5,7 @@ const debugTool = require('andydebugtool');
 // Stores the instance of the connection to the database, reads .env that holds
 // the environmental variables
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
-  host: 'localhost',
+  host: process.env.DB_HOST,
   dialect: 'mysql',
   logging: false,
 
