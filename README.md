@@ -1,6 +1,6 @@
 ![an.dy url shortener](src/routes/public/images/andy_url_shortener.png "an.dy url shortener")
 
-# An.dy URL Shortener [![GitHub issues](https://img.shields.io/github/release/afrobayofranco/StaticAPI.svg)](https://github.com/afrobayofranco/StaticAPI/releases) [![codeship](https://codeship.com/projects/a8205c20-c25e-0134-5696-22c030d3a647/status?branch=master)](https://app.codeship.com/projects/197433)
+# An.dy URL Shortener [![GitHub issues](https://img.shields.io/github/release/afrobayofranco/StaticAPI.svg)](https://github.com/afrobayofranco/StaticAPI/releases) [![codeship](https://codeship.com/projects/a8205c20-c25e-0134-5696-22c030d3a647/status?branch=hrelease)](https://app.codeship.com/projects/197433)
 
 Create a basic RESTful API in Node for a simplified URL shortener application
 
@@ -9,7 +9,9 @@ Create a basic RESTful API in Node for a simplified URL shortener application
 [Run the API](#running)  
 [Debugging](#debugging)  
 [Testing](#testing)  
-[Coding Style](#codingstyle)  
+[Coding Style](#codingstyle)
+[Workflow](#workflow)
+[Deployment](#deployment)
 
 ## Features<a name="features">
 An.dy URL Shortener allows its users to shorten a URL to a very simple and useful shortened url. Once the shortURL is saved, users can use it to redirect to the original URL.
@@ -68,7 +70,7 @@ node src/server.js
 If you already have installed Nodemon use:
 
 ~~~~
-nodemon scr/server.js
+nodemon src/server.js
 ~~~~
 
 ### HTTP Methods
@@ -297,4 +299,53 @@ an.dy is running on 3000
 ---
 
 ## Coding Style<a name="codingstyle">
-The coding style for this API follows the [airbnb](https://github.com/airbnb/javascript) style guide. Linter was used to process the code and ensure its complies with the style guide.
+The coding style for this API follows the [airbnb](https://github.com/airbnb/javascript) style guide. Linter was used to process the code and ensure it complies with the style guide.
+
+---
+
+## Workflow<a name="workflow">
+1. Create a new feature branch
+~~~~
+git checkout -b <feature_branch_name>
+~~~~
+
+2. Work, commit and push changes on the feature branch
+~~~~
+git status
+git add -A
+git commit -m 'your_message'
+git push origin <feature_branch_name>
+git status
+~~~~
+Run the app and test to be sure everything is running correctly.
+
+3. Merge feature brach to master
+~~~~
+git checkout master
+git status
+git merge <feature_branch_name>
+git push origin master
+git status
+~~~~
+Run the app and test to be sure everything is running correctly.
+This is the last chance to check that everything is running to expects,
+**be completely sure everything is working before deployment!**
+
+## Deployment<a name="deployment">
+
+  * Deploy to HEROKU
+  ~~~~
+  git checkout hrelease
+  git status
+  git merge master
+  git push origin hrelease
+  git status
+  ~~~~
+  A new release has being sent to Heroku pipeline, if it passes codeship test, it will go to staging.
+
+  * Deploy to DIGITAL OCEAN
+  ~~~~
+  git checkout master
+  git status
+  git push ProductionServer master
+  ~~~~

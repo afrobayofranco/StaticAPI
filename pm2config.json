@@ -1,0 +1,6 @@
+{
+	"name": "andyurlshortener",
+	"script": "/var/www/html/src/server.js",
+	"watch": ["src"],
+	"ignore_watch": ["node_modules"]
+}
