@@ -1,12 +1,15 @@
 // Exports
 module.exports = (express) => {
   const router = express.Router();
+  const path = require('path');
 
   router.get('/status', (req, res) => {
     res.json({
       healthy: true,
     });
   });
+
+  router.use('/', express.static(path.join(__dirname, '/public')));
 
   // Routes
   // Route to api.js
