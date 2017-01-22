@@ -9,9 +9,9 @@ Create a basic RESTful API in Node for a simplified URL shortener application
 [Run the API](#running)  
 [Debugging](#debugging)  
 [Testing](#testing)  
-[Coding Style](#codingstyle)
-[Workflow](#workflow)
-[Deployment](#deployment)
+[Coding Style](#codingstyle)  
+[Workflow](#workflow)  
+[Deployment](#deployment)  
 
 ## Features<a name="features">
 An.dy URL Shortener allows its users to shorten a URL to a very simple and useful shortened url. Once the shortURL is saved, users can use it to redirect to the original URL.
