@@ -1,0 +1,39 @@
+{
+  "name": "StaticAPI",
+  "scripts": {
+  },
+  "env": {
+    "CLEARDB_DATABASE_URL": {
+      "required": true
+    },
+    "CODESHIP_ID": {
+      "required": true
+    },
+    "DATABASE_URL": {
+      "required": true
+    },
+    "DB_HOST": {
+      "required": true
+    },
+    "DB_NAME": {
+      "required": true
+    },
+    "DB_PASS": {
+      "required": true
+    },
+    "DB_USER": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "cleardb",
+    "codeship"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
