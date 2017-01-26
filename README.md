@@ -253,7 +253,7 @@ debugTool.debug('YOUR_MESSAGE', '{type}');
 
 ***success*** will turn debug message to green color.
 ***error*** will turn debug message to red color.
-You can leave the argument empty and debug message will be yellow color.
+***warn*** will turn debug message to yellow color.
 
 ---
 
@@ -349,3 +349,10 @@ This is the last chance to check that everything is running to expects,
   git status
   git push ProductionServer master
   ~~~~
+
+## Version Bumper
+This API counts with an automated version bumper, it will bump the part of the version indeicated by 1.
+To use it, on you command line do:
+~~~~
+gulp bump { --major | --minor | --patch }
+~~~~

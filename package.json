@@ -1,6 +1,6 @@
 {
   "name": "an.dy_url_shortener",
-  "version": "1.0.0",
+  "version": "1.10.0",
   "engines": {
     "node": "7.2.0"
   },
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/afrobayofranco/StaticAPI#readme",
   "dependencies": {
-    "andydebugtool": "^1.0.1",
+    "andydebugtool": "^1.3.1",
     "body-parser": "1.15.2",
     "chalk": "^1.1.3",
     "dotenv": "^2.0.0",
